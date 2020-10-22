@@ -34,7 +34,14 @@ export default {
 
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: [
+    "@nuxtjs/prismic"
   ],
+
+  prismic: {
+    endpoint: 'https://paulspersonalwebsite.cdn.prismic.io/api/v2',
+    linkResolver: '@/plugins/link-resolver',
+    htmlSerializer: '@/plugins/html-serializer',
+  },
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
