@@ -1,0 +1,47 @@
+@font-face {
+  font-family: Work Sans;
+  font-weight: 400;
+  src: url('~assets/fonts/WorkSans-Bold.ttf') format('ttf'),
+}
+@font-face {
+  font-family: Work Sans;
+  font-weight: 500;
+  src: url('~assets/fonts/WorkSans-Medium.ttf') format('ttf'),
+}
+@font-face {
+  font-family: Work Sans;
+  font-weight: 700;
+  src: url('~assets/fonts/WorkSans-Bold.ttf') format('ttf'),
+}
+@font-face {
+	font-family: Montserrat;
+	font-weight: 900;
+	src: url('~assets/fonts/Montserrat-Black.ttf') format('ttf'),
+}
+@font-face {
+  font-family: Merriweather;
+  font-weight: 400;
+  src: url('~assets/fonts/Merriweather-Regular.ttf') format('ttf'),
+}
+
+/* 
+@font-face {
+  font-family: Underground;
+  font-weight: 400;
+  src: url('~assets/fonts/Roboto.woff2') format('woff2'),
+       url('~assets/fonts/Roboto.woff') format('woff');
+}
+
+@font-face {
+  font-family: Underground;
+  font-weight: 400;
+  src: url('~assets/fonts/Roboto.woff2') format('woff2'),
+       url('~assets/fonts/Roboto.woff') format('woff');
+}
+
+@font-face {
+  font-family: Underground;
+  font-weight: 400;
+  src: url('~assets/fonts/Roboto.woff2') format('woff2'),
+       url('~assets/fonts/Roboto.woff') format('woff');
+} */

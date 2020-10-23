@@ -1,0 +1,34 @@
+/* Tailwind */
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@import '~assets/css/fonts';
+
+/* Basics */
+html {
+	@apply h-full min-h-full;
+}
+section {
+	@apply h-screen;
+}
+.blend {
+	mix-blend-mode: difference;
+}
+
+/* Index */
+.main-nav-item {
+	@apply text-3xl font-semibold underline;
+}
+.portfolio-item {
+	@apply text-6xl font-semibold underline transition ease-in-out duration-300;
+}
+.portfolio-item:hover {
+	@apply text-red-500
+}
+
+/* Portfolio */
+.portfolio-title {
+	text-transform: uppercase;
+	font-size: 33vw;
+}

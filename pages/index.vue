@@ -1,26 +1,26 @@
 <template>
-  <div class="container">
-    <div>
-      <h1 class="title">pauljlee3</h1>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--grey"
-        >
-          GitHub
-        </a>
-      </div>
-    </div>
+  <div>
+    <section class="flex flex-col justify-between pt-40 pb-6 px-6 text-right">
+      <h1 class="text-6xl font-bold flex flex-col text-2xl leading-tight blend">
+        <span>Self-motivated,</span>
+        <span>Passionate</span>
+        <span>Web Developer</span>
+      </h1>
+      <p class="flex flex-col text-lg blend">
+        <span> PAUL J. LEE</span>
+        <span>{{ new Date().getFullYear() }} PORTFOLIO</span>
+      </p>
+    </section>
+    <section class="flex flex-col justify-center items-center p-6">
+      <nuxt-link class="portfolio-item blend" to="/work/wyzegyde"
+        >WyzeGyde</nuxt-link
+      >
+      <nuxt-link class="portfolio-item blend" to="/work/audioeye"
+        >AudioEye</nuxt-link
+      >
+    </section>
+    <!-- <section>about</section>
+    <section>contact</section> -->
   </div>
 </template>
 
