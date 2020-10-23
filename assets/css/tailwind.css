@@ -8,34 +8,40 @@
 /* Basics */
 html {
 	@apply h-full min-h-full;
-	scroll-behavior: smooth;
 }
 .blend {
 	mix-blend-mode: difference;
 }
 .box {
-	@apply p-6;
-	border: 5px solid white;
-	box-shadow: 7px 7px 0px 0px rgba(255,255,255,0.7);
+	border: 4px solid white;
+	box-shadow: 5px 5px 0px 0px rgba(255,255,255,0.7);
 }
 
 /* Animations */
-.fade-up.in-view {
-	opacity: 1;
-  transform: none;
-}
-
 .fade-up {
+	@apply transition ease-out duration-1000;
 	opacity: 0;
   transform: translateY(10vh);
 }
 
+.fade-up.in-view {
+	opacity: 1;
+  transform: none;
+}
+.fade-in {
+	@apply transition ease-out duration-300;
+	opacity: 0;
+}
+.fade-in.active {
+	opacity: 1;
+}
+
 /* Index */
 .main-nav-item {
-	@apply text-3xl font-semibold underline blend;
+	@apply text-3xl font-semibold blend;
 }
 .portfolio-item {
-	@apply text-5xl font-semibold underline transition ease-out duration-1000 blend;
+	@apply text-5xl font-semibold underline transition ease-out duration-1000;
 }
 .portfolio-item:hover {
 	@apply text-red-500
