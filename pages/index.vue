@@ -1,21 +1,22 @@
 <template>
   <div>
-    <section
-      class="h-screen flex flex-col justify-between pt-40 pb-6 px-6 text-right"
-    >
-      <h1 class="text-6xl font-bold flex flex-col text-2xl leading-tight blend" v-html="home.tagline[0].text">
-
-      </h1>
+    <!-- Intro -->
+    <section class="h-screen flex flex-col justify-between pt-40 pb-6 px-6 text-right">
+      <h1 class="text-6xl font-bold flex flex-col text-2xl leading-tight blend" v-html="home.tagline[0].text"></h1>
       <p class="flex flex-col text-lg blend">
         <span> PAUL J. LEE</span>
         <span>{{ new Date().getFullYear() }} PORTFOLIO</span>
       </p>
     </section>
-    <section id="about" class="h-screen px-6 py-20">
+
+    <!-- About -->
+    <section id="about" class="h-screen px-6 pt-40">
       <div class="box blend" v-html="home.about[0].text">
       </div>
     </section>
-    <section id="work" class="h-screen flex flex-col justify-center items-center p-6">
+
+    <!-- Work -->
+    <section id="work" class="h-screen flex flex-col justify-center items-center px-6">
       <nuxt-link
         v-scroll
         v-for="item in workItems"
@@ -26,14 +27,16 @@
       >
       </nuxt-link>
     </section>
-    <section id="contact" class="h-screen">
-     
+
+    <!-- Contact -->
+    <section id="contact" class="h-screen pt-40 px-6">
+      <div>contact</div>
     </section>
+
+    <!-- Footer -->
     <footer class="flex justify-center py-10">
        <p>Made with<span class="pl-1 pr-2">❤️</span>by Paul J. Lee</p>
     </footer>
-    <!-- <section>about</section>
-    <section>contact</section> -->
   </div>
 </template>
 
