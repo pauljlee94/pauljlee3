@@ -9,9 +9,6 @@
 html {
 	@apply h-full min-h-full;
 }
-section {
-	@apply h-screen;
-}
 .blend {
 	mix-blend-mode: difference;
 }
@@ -29,6 +26,24 @@ section {
 
 /* Portfolio */
 .portfolio-title {
+	@apply fixed blend font-mont font-black; 
 	text-transform: uppercase;
 	font-size: 33vw;
+	line-height:0.585;
+}
+.metrics a {
+	@apply underline;
+}
+.metric h3 {
+	@apply mr-2
+}
+.metric {
+	@apply flex;
+}
+.metric-links {
+	@apply flex flex-col;
+}
+.hero-img {
+	@apply object-cover;
+	height: 60vh;
 }
