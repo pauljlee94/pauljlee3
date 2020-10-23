@@ -11,7 +11,7 @@
         <span>{{ new Date().getFullYear() }} PORTFOLIO</span>
       </p>
     </section>
-    <section class=" flex flex-col justify-center items-center p-6">
+    <section class="h-screen flex flex-col justify-center items-center p-6">
       <nuxt-link class="portfolio-item blend" to="/work/wyzegyde"
         >WyzeGyde</nuxt-link
       >

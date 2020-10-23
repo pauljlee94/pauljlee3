@@ -9,6 +9,7 @@
           v-html="workItem.title[0].text"
         ></h1>
       </section>
+
 			<!-- About -->
       <section class="pt-56 pr-6">				
         <h2 v-if="workItem.tagline[0].text" 
@@ -27,8 +28,15 @@
 
         <div class="metrics grid grid-cols-2 gap-2 blend font-work font-bold text-lg" v-html="workItem.metrics[0].text"></div>
       </section>
+
+			<!-- Hero -->
 			<section class="py-20">
 				<img v-if="workItem.hero.url" class="hero-img" :src="workItem.hero.url" alt="">
+			</section>
+
+			<!-- Images -->
+			<section>
+				
 			</section>
     </main>
   </div>
