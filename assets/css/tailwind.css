@@ -13,12 +13,23 @@ html {
 	mix-blend-mode: difference;
 }
 
+/* Animations */
+.fade-up.in-view {
+	opacity: 1;
+  transform: none;
+}
+
+.fade-up {
+	opacity: 0;
+  transform: translateY(10vh);
+}
+
 /* Index */
 .main-nav-item {
 	@apply text-3xl font-semibold underline;
 }
 .portfolio-item {
-	@apply text-6xl font-semibold underline transition ease-in-out duration-300;
+	@apply text-6xl font-semibold underline transition ease-in-out duration-1000;
 }
 .portfolio-item:hover {
 	@apply text-red-500
@@ -48,7 +59,7 @@ html {
 	@apply flex flex-col;
 }
 .hero-img {
-	@apply object-cover;
+	@apply object-cover w-full;
 	height: 100vh;
 }
 .portfolio-home {
@@ -67,4 +78,3 @@ html {
 	font-size: 34vw;
 	line-height:0.65;
 }
-

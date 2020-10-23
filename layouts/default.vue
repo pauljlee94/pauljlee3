@@ -11,3 +11,13 @@
     </main>
   </div>
 </template>
+
+<script>
+  export default {
+    methods: {
+      poop(evt,el) {
+        console.log('test');
+      }
+    },
+  }
+</script>

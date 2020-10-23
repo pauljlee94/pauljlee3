@@ -15,9 +15,10 @@
     </section>
     <section class="h-screen flex flex-col justify-center items-center p-6">
       <nuxt-link
+        v-scroll
         v-for="item in workItems"
         :key="item.id"
-        class="portfolio-item blend"
+        class="portfolio-item fade-up"
         :to="'/work/' + item.uid"
         v-html="item.data.title[0].text"
       >
