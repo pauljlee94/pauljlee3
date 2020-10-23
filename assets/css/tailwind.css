@@ -26,10 +26,14 @@ html {
 
 /* Portfolio */
 .portfolio-title {
-	@apply fixed blend font-mont font-black; 
+	@apply fixed blend font-mont font-black flex flex-col items-center inset-0;
+	@screen sm {
+		@apply flex-row items-start justify-center;
+    font-size: 16.5vw !important;
+	}
 	text-transform: uppercase;
-	font-size: 33vw;
-	line-height:0.585;
+	font-size: 34vw;
+	line-height:0.6;
 }
 .metrics a {
 	@apply underline;
@@ -45,5 +49,22 @@ html {
 }
 .hero-img {
 	@apply object-cover;
-	height: 60vh;
+	height: 100vh;
 }
+.portfolio-home {
+	@apply blend font-mont font-black flex flex-col items-center; 
+	text-transform: uppercase;
+	font-size: 34vw;
+	line-height:0.65;
+}
+.portfolio-next {
+	@apply blend font-mont font-black flex flex-col items-center; 
+	@screen sm {
+		@apply flex-row items-start justify-center;
+    font-size: 16.5vw !important;
+	}
+	text-transform: uppercase;
+	font-size: 34vw;
+	line-height:0.65;
+}
+

@@ -1,17 +1,17 @@
 <template>
-  <div class="text-white" :style="'background-color:' + workItem.background">
+  <div class="text-white overflow-y-hidden" :style="'background-color:' + workItem.background">
     <!-- <WorkNav /> -->
     <main>
       <!-- Header -->
       <section>
         <h1 v-if="workItem.title[0].text" 
-          class="flex flex-col portfolio-title"
+          class="flex flex-col items-center portfolio-title inset-0"
           v-html="workItem.title[0].text"
         ></h1>
       </section>
 
 			<!-- About -->
-      <section class="pt-56 pr-6">				
+      <section class="pt-56 px-4">				
         <h2 v-if="workItem.tagline[0].text" 
           class="font-merr text-2xl leading-tight blend"
           v-html="workItem.tagline[0].text"
@@ -30,33 +30,65 @@
       </section>
 
 			<!-- Hero -->
-			<section class="py-20">
-				<img v-if="workItem.hero.url" class="hero-img" :src="workItem.hero.url" alt="">
-			</section>
+			<img v-if="workItem.hero.url"  class="hero-img py-20" :src="workItem.hero.url" alt="">
 
 			<!-- Images -->
 			<section>
-				
+				<!-- Image group -->
+				<div v-for="imageGroup in workItem.images" :key="imageGroup.key">
+					<template v-for="img in imageGroup" >
+						<img :key="img.url" v-if="img && img.url" :src="img.url" :alt="imageGroup.key" class="mb-20" :class="imageGroup.decorative ? null : 'relative'" />
+					</template>
+				</div>
 			</section>
+
+			<!-- Footer Banner -->
+			<img v-if="workItem.footerimg.url"  class="hero-img py-20" :src="workItem.footerimg.url" alt="">
+
+			<!-- Footer -->
+			<footer>
+				<nav aria-label="footer">
+					<nuxt-link
+						to="/"
+						class="portfolio-home flex flex-col items-center portfolio-next pb-6"
+					>Home</nuxt-link>
+					<nuxt-link
+						:to="'/work/' + nextItem.uid"
+						class="flex flex-col items-center portfolio-next"
+						v-html="nextItem.data.title[0].text"
+					></nuxt-link>
+				</nav>
+			</footer>
     </main>
   </div>
 </template>
 
 <script>
-import WorkNav from "@/components/WorkNav"
+// import WorkNav from "@/components/WorkNav"
+
 export default {
   async asyncData({ $prismic, error, params }) {
-    console.log(params)
-    try {
-      const workItem = (await $prismic.api.getByUID("portfolio", params.workId))
-        .data
-      return {
-        workItem,
-      }
-    } catch (e) {
-      error({ statusCode: 404, message: "Page not found" })
-    }
-  },
+		const workItem = (await $prismic.api.getByUID("portfolio", params.workId)).data
+    const workItems = await $prismic.api.query($prismic.predicates.at("document.type", "portfolio"),{ orderings : '[my.portfolio.order]' }).then(promise =>{
+     return promise.results
+		})
+
+		const nextIndex = workItems.findIndex(item => {
+			return item.uid === params.workId
+		}) + 1
+
+		const nextItem = workItems[nextIndex] ? workItems[nextIndex] : workItems[0]
+
+		console.log(nextItem);
+
+		return {  workItem: workItem, workItems: workItems, nextItem: nextItem }
+	},
+	
+	mounted () {
+		// itemIndex = this.workItems.findIndex(item => {
+		// 	return item.uid === this.$route.params.workId
+		// }) + 1
+	},
   layout: "work",
 }
 </script>
