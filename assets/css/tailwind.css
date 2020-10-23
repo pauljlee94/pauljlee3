@@ -8,9 +8,15 @@
 /* Basics */
 html {
 	@apply h-full min-h-full;
+	scroll-behavior: smooth;
 }
 .blend {
 	mix-blend-mode: difference;
+}
+.box {
+	@apply p-6;
+	border: 5px solid white;
+	box-shadow: 7px 7px 0px 0px rgba(255,255,255,0.7);
 }
 
 /* Animations */
@@ -29,7 +35,7 @@ html {
 	@apply text-3xl font-semibold underline;
 }
 .portfolio-item {
-	@apply text-6xl font-semibold underline transition ease-in-out duration-1000;
+	@apply text-6xl font-semibold underline transition ease-out duration-1000;
 }
 .portfolio-item:hover {
 	@apply text-red-500
@@ -63,7 +69,7 @@ html {
 	height: 100vh;
 }
 .portfolio-home {
-	@apply blend font-mont font-black flex flex-col items-center; 
+	@apply blend font-mont font-black flex flex-col items-center pb-6; 
 	text-transform: uppercase;
 	font-size: 34vw;
 	line-height:0.65;

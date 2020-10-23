@@ -5,7 +5,7 @@
       <!-- Header -->
       <section>
         <h1 v-if="workItem.title[0].text" 
-          class="flex flex-col items-center portfolio-title inset-0"
+          class="portfolio-title"
           v-html="workItem.title[0].text"
         ></h1>
       </section>
@@ -50,11 +50,11 @@
 				<nav aria-label="footer">
 					<nuxt-link
 						to="/"
-						class="portfolio-home flex flex-col items-center portfolio-next pb-6"
+						class="portfolio-home"
 					>Home</nuxt-link>
 					<nuxt-link
 						:to="'/work/' + nextItem.uid"
-						class="flex flex-col items-center portfolio-next"
+						class="portfolio-next"
 						v-html="nextItem.data.title[0].text"
 					></nuxt-link>
 				</nav>
