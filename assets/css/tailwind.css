@@ -32,10 +32,10 @@ html {
 
 /* Index */
 .main-nav-item {
-	@apply text-3xl font-semibold underline;
+	@apply text-3xl font-semibold underline blend;
 }
 .portfolio-item {
-	@apply text-6xl font-semibold underline transition ease-out duration-1000;
+	@apply text-6xl font-semibold underline transition ease-out duration-1000 blend;
 }
 .portfolio-item:hover {
 	@apply text-red-500

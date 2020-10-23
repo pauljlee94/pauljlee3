@@ -12,7 +12,7 @@
       </p>
     </section>
     <section id="about" class="h-screen px-6 py-20">
-      <div class="box" v-html="home.about[0].text">
+      <div class="box blend" v-html="home.about[0].text">
       </div>
     </section>
     <section id="work" class="h-screen flex flex-col justify-center items-center p-6">
@@ -26,6 +26,12 @@
       >
       </nuxt-link>
     </section>
+    <section id="contact" class="h-screen">
+     
+    </section>
+    <footer class="flex justify-center py-10">
+       <p>Made with<span class="pl-1 pr-2">❤️</span>by Paul J. Lee</p>
+    </footer>
     <!-- <section>about</section>
     <section>contact</section> -->
   </div>
