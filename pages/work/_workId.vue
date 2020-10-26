@@ -29,16 +29,15 @@
       </section>
 
 			<!-- Hero -->
-			<img v-if="workItem.hero.url"  class="hero-img py-20" :src="workItem.hero.url" alt="">
+			<img v-if="workItem.hero.url"  class="hero-img pt-20 pb-40" :src="workItem.hero.url" alt="">
 
 			<!-- Images -->
 			<section class="sm:px-8">
 				<!-- Image group -->
-				<div v-for="imageGroup in workItem.images" :key="imageGroup.key" class="flex flex-col sm:flex-row py-4">
+				<div v-for="imageGroup in workItem.images" :key="imageGroup.key" class="flex flex-col sm:flex-row">
 					<!-- Image -->
 					<template v-for="(img, index) in imageGroup.images">
-						<!-- TODO: Need smarter way of doing margins (maybe use vw to keep aspect ratio)-->
-						<div v-if="img.url" :key="img.url" class="mb-20 sm:mb-24 lg:mb-40 xl:mb-64 mx-auto">
+						<div  v-if="img.url" :key="img.url" class="imageContainer mb-20 sm:mb-24 lg:mb-40 xl:mb-64 mx-auto">
 							<img :src="img.url" :alt="imageGroup.key"  :class="['shadow-xxl', Object.keys(imageGroup.images[1]).length > 0 ? index === 0 ? 'left-image' : 'right-image' : null, imageGroup.decorative ? null : 'relative']"/>
 						</div>
 					</template>
@@ -68,7 +67,6 @@
 </template>
 
 <script>
-
 export default {
   async asyncData({ $prismic, error, params }) {
 		const workItem = (await $prismic.api.getByUID("portfolio", params.workId)).data
@@ -90,12 +88,7 @@ export default {
 
 		return {  workItem: workItem, workItems: workItems, nextItem: nextItem }
 	},
-	
-	mounted () {
-		// itemIndex = this.workItems.findIndex(item => {
-		// 	return item.uid === this.$route.params.workId
-		// }) + 1
-	},
+
   layout: "work",
 }
 </script>

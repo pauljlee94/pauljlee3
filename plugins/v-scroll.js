@@ -3,7 +3,7 @@ import Vue from 'vue'
 Vue.directive('scroll', {
   inserted: function(el, binding) {
 		let f = function() {
-			let topOfEle = el.getBoundingClientRect().top + 100
+			let topOfEle = el.getBoundingClientRect().top + 50
 			let windowHeight = window.innerHeight
       if (topOfEle <= windowHeight) {
 				el.classList.add('in-view')
