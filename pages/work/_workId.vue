@@ -38,7 +38,7 @@
 					<!-- Image -->
 					<template v-for="(img, index) in imageGroup.images">
 						<div  v-if="img.url" :key="img.url" class="imageContainer mb-20 sm:mb-24 lg:mb-40 xl:mb-64 mx-auto">
-							<img :src="img.url" :alt="imageGroup.key"  :class="['shadow-xxl', Object.keys(imageGroup.images[1]).length > 0 ? index === 0 ? 'left-image' : 'right-image' : null, imageGroup.decorative ? null : 'relative']"/>
+							<img v-scroll :src="img.url" :alt="imageGroup.key"  :class="['fade-up shadow-xxl', Object.keys(imageGroup.images[1]).length > 0 ? index === 0 ? 'left-image' : 'right-image' : null, imageGroup.decorative ? null : 'relative']"/>
 						</div>
 					</template>
 
