@@ -1,6 +1,5 @@
 <template>
-  <div class="text-white overflow-y-hidden" :style="'background-color:' + workItem.background">
-    <!-- <WorkNav /> -->
+  <div class="text-white overflow-hidden" :style="'background-color:' + workItem.background">
     <main>
       <!-- Header -->
       <section>
@@ -33,12 +32,17 @@
 			<img v-if="workItem.hero.url"  class="hero-img py-20" :src="workItem.hero.url" alt="">
 
 			<!-- Images -->
-			<section>
+			<section class="sm:px-8">
 				<!-- Image group -->
-				<div v-for="imageGroup in workItem.images" :key="imageGroup.key">
-					<template v-for="img in imageGroup" >
-						<img :key="img.url" v-if="img && img.url" :src="img.url" :alt="imageGroup.key" class="mb-20" :class="imageGroup.decorative ? null : 'relative'" />
+				<div v-for="imageGroup in workItem.images" :key="imageGroup.key" class="flex flex-col sm:flex-row py-4">
+					<!-- Image -->
+					<template v-for="(img, index) in imageGroup.images">
+						<!-- TODO: Need smarter way of doing margins (maybe use vw to keep aspect ratio)-->
+						<div v-if="img.url" :key="img.url" class="mb-20 sm:mb-24 lg:mb-40 xl:mb-64 mx-auto">
+							<img :src="img.url" :alt="imageGroup.key"  :class="['shadow-xxl', Object.keys(imageGroup.images[1]).length > 0 ? index === 0 ? 'left-image' : 'right-image' : null, imageGroup.decorative ? null : 'relative']"/>
+						</div>
 					</template>
+
 				</div>
 			</section>
 
@@ -64,13 +68,18 @@
 </template>
 
 <script>
-// import WorkNav from "@/components/WorkNav"
 
 export default {
   async asyncData({ $prismic, error, params }) {
 		const workItem = (await $prismic.api.getByUID("portfolio", params.workId)).data
     const workItems = await $prismic.api.query($prismic.predicates.at("document.type", "portfolio"),{ orderings : '[my.portfolio.order]' }).then(promise =>{
      return promise.results
+		})
+
+		workItem.images.forEach(group => {
+			group.images = [group.image, group.image2]
+			delete group.image
+			delete group.image2
 		})
 
 		const nextIndex = workItems.findIndex(item => {

@@ -1,16 +1,16 @@
 <template>
   <div>
     <!-- Intro -->
-    <section class="h-screen flex flex-col justify-between pt-40 pb-6 px-6 text-right">
-      <h1 class="text-6xl font-bold flex flex-col text-2xl leading-tight blend" v-html="home.tagline[0].text"></h1>
-      <p class="flex flex-col text-lg">
+    <section class="h-screen flex flex-col justify-between pt-40 pb-6 px-6 text-right md:px-12">
+      <h1 class="intro-title" v-html="home.tagline[0].text"></h1>
+      <p class="branding">
         <span> PAUL J. LEE</span>
         <span>{{ new Date().getFullYear() }} PORTFOLIO</span>
       </p>
     </section>
 
     <!-- About -->
-    <section id="about" class="h-screen px-6 pt-48">
+    <section id="about" class="h-screen max-w-2xl mx-auto px-6 pt-48">
       <div  v-scroll class="box p-6 blend fade-up" v-html="home.about[0].text"></div>
     </section>
 
@@ -28,7 +28,7 @@
     </section>
 
     <!-- Contact -->
-    <section id="contact" class="h-screen pt-48 pb-20 px-6 max-w-2xl mx-auto">
+    <section id="contact" class="pt-48 pb-20 px-6 max-w-2xl mx-auto">
       <form action="https://formspree.io/f/xgepkrjg"  method="POST" class="flex flex-col justify-between">
         <div>
           <label for="name" class="block text-lg">
@@ -55,9 +55,17 @@
           </div>
         </div>
         <div class="mt-6">
-          <button class="border-2 p-2 w-full text-lg">Send</button>
+          <button class="border-2 p-4 w-full text-lg hover:bg-white hover:text-black active:bg-white active:text-black">Send</button>
         </div>
       </form>
+      <div class="mt-16">
+        <div class="border-2 p-4 w-full text-lg grid grid-cols-2 gap-y-3">
+          <a class="underline" href="">GitHub</a>
+          <a class="underline" href="">LinkedIn</a>
+          <a class="underline" href="">Email</a>
+          <a class="underline" href="">Phone</a>
+        </div>
+      </div>
     </section>
 
     <!-- Footer -->

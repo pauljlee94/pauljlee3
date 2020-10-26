@@ -1,9 +1,9 @@
 /* Tailwind */
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
 
-@import '~assets/css/fonts';
+@import "~assets/css/fonts";
 
 /* Basics */
 html {
@@ -14,22 +14,24 @@ html {
 }
 .box {
 	border: 4px solid white;
-	box-shadow: 5px 5px 0px 0px rgba(255,255,255,0.7);
+	box-shadow: 5px 5px 0px 0px rgba(255, 255, 255, 0.7);
+}
+.shadow-xxl {
+	box-shadow: 0px 0px 65px -8px rgba(0, 0, 0, 0.75);
 }
 
 /* Animations */
 .fade-up {
-	@apply transition ease-out duration-1000;
+	@apply transition ease-in-out duration-1000;
 	opacity: 0;
-  transform: translateY(10vh);
+	transform: translateY(10vh);
 }
-
 .fade-up.in-view {
 	opacity: 1;
-  transform: none;
+	transform: none;
 }
 .fade-in {
-	@apply transition ease-out duration-300;
+	@apply transition ease-in-out duration-300;
 	opacity: 0;
 }
 .fade-in.active {
@@ -37,14 +39,29 @@ html {
 }
 
 /* Index */
+.intro-title {
+	@apply text-6xl font-bold flex flex-col leading-tight blend;
+	@screen sm {
+		font-size: 8vw;
+	}
+}
+.branding {
+	@apply flex flex-col text-lg;
+	@screen md {
+		font-size: 2.5vw;
+	}
+}
 .main-nav-item {
 	@apply text-3xl font-semibold blend;
+	@screen lg {
+		font-size: 3.5vw;
+	}
 }
 .portfolio-item {
-	@apply text-5xl font-semibold underline transition ease-out duration-1000;
-}
-.portfolio-item:hover {
-	@apply text-red-500
+	@apply text-5xl font-semibold underline transition ease-in-out duration-1000 font-mont uppercase;
+	@screen sm {
+		font-size: 10vw;
+	}
 }
 
 /* Portfolio */
@@ -52,17 +69,17 @@ html {
 	@apply fixed blend font-mont font-black flex flex-col items-center inset-0;
 	@screen sm {
 		@apply flex-row items-start justify-center;
-    font-size: 16.5vw !important;
+		font-size: 16.5vw !important;
 	}
 	text-transform: uppercase;
 	font-size: 34vw;
-	line-height:0.6;
+	line-height: 0.6;
 }
 .metrics a {
 	@apply underline;
 }
 .metric h3 {
-	@apply mr-2
+	@apply mr-2;
 }
 .metric {
 	@apply flex;
@@ -74,19 +91,29 @@ html {
 	@apply object-cover w-full;
 	height: 100vh;
 }
+.left-image {
+	@screen sm {
+		transform: translateX(2vw);
+	}
+}
+.right-image {
+	@screen sm {
+		transform: translate(-4vw, 6vw);
+	}
+}
 .portfolio-home {
-	@apply blend font-mont font-black flex flex-col items-center pb-6; 
+	@apply blend font-mont font-black flex flex-col items-center pb-6;
 	text-transform: uppercase;
 	font-size: 34vw;
-	line-height:0.65;
+	line-height: 0.65;
 }
 .portfolio-next {
-	@apply blend font-mont font-black flex flex-col items-center; 
+	@apply blend font-mont font-black flex flex-col items-center;
 	@screen sm {
 		@apply flex-row items-start justify-center;
-    font-size: 16.5vw !important;
+		font-size: 16.5vw !important;
 	}
 	text-transform: uppercase;
 	font-size: 34vw;
-	line-height:0.65;
+	line-height: 0.65;
 }

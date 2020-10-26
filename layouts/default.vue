@@ -1,9 +1,9 @@
 <template>
   <div class="bg-black text-white font-work">
-    <header class="fixed p-6 z-10 blend">
+    <header class="fixed p-6 md:p-12 z-10 blend">
       <nav class="flex flex-col">
         <nuxt-link class="main-nav-item" to="/#about">
-          <span v-in-view class="underline">About</span>
+          <span class="underline">About</span>
           <!-- <span :class="[$route.hash.includes('about') ? 'active' : null, 'fade-in']">•</span> -->
         </nuxt-link>
         <nuxt-link class="main-nav-item" to="/#work">
