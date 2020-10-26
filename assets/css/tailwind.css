@@ -3,8 +3,6 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
-@import "~assets/css/fonts";
-
 /* Basics */
 html {
 	@apply h-full min-h-full;
