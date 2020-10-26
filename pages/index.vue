@@ -1,7 +1,7 @@
 <template>
   <div>
     <!-- Intro -->
-    <section class="h-screen flex flex-col justify-between pt-40 pb-6 px-6 text-right md:px-12">
+    <section class="h-screen flex flex-col justify-between pt-40 pb-6 px-6 text-right md:px-32">
       <h1 class="intro-title" v-html="home.tagline[0].text"></h1>
       <p class="branding">
         <span> PAUL J. LEE</span>
@@ -55,7 +55,7 @@
           </div>
         </div>
         <div class="mt-6">
-          <button class="border-2 p-4 w-full text-lg hover:bg-white hover:text-black active:bg-white active:text-black">Send</button>
+          <button class="border-2 p-4 w-full text-lg transition duration-00 hover:bg-white hover:text-black active:bg-white active:text-black">Send</button>
         </div>
       </form>
       <div class="mt-16">
@@ -86,5 +86,6 @@ export default {
       })
     return { home: home, workItems: workItems }
   },
+  layout: "defaultLayout"
 }
 </script>

@@ -1,6 +1,6 @@
 <template>
   <div class="bg-black text-white font-work">
-    <header class="fixed p-6 md:p-12 z-10 blend">
+    <header class="fixed p-6 md:p-32 z-10 blend">
       <nav class="flex flex-col">
         <a class="main-nav-item" v-scroll-to="'#about'">
           <span class="underline">About</span>

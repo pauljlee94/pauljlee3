@@ -10,22 +10,24 @@
       </section>
 
 			<!-- About -->
-      <section class="pt-56 px-4">				
-        <h2 v-if="workItem.tagline[0]" 
-          class="font-merr text-2xl leading-tight blend"
-          v-html="workItem.tagline[0].text"
-        ></h2>
+      <section class="work-about pt-64 px-4">				
+				<div class="sm:col-start-2 lg:pr-20 xxl:pr-64">
+					<h2 v-if="workItem.tagline[0]" 
+						class="font-merr text-3xl leading-tight blend"
+						v-html="workItem.tagline[0].text"
+					></h2>
 
-        <hr v-if="workItem.tagline[0]" class="my-4 blend" />
+					<hr v-if="workItem.tagline[0]" class="my-4 blend" />
 
-        <p v-if="workItem.summary[0]" 
-          class="text-lg font-work font-light leading-snug blend"
-          v-html="workItem.summary[0].text"
-        ></p>
+					<p v-if="workItem.summary[0]" 
+						class="text-lg font-work font-light leading-snug blend"
+						v-html="workItem.summary[0].text"
+					></p>
 
-        <hr v-if="workItem.summary[0]" class="my-4 blend" />
+					<hr v-if="workItem.summary[0]" class="my-4 blend" />
 
-        <div v-if="workItem.metrics[0]" class="metrics grid grid-cols-2 gap-2 blend font-work font-bold text-lg" v-html="workItem.metrics[0].text"></div>
+					<div v-if="workItem.metrics[0]" class="metrics grid grid-cols-2 gap-2 blend font-work font-bold text-lg" v-html="workItem.metrics[0].text"></div>
+				</div>
       </section>
 
 			<!-- Hero -->
@@ -34,11 +36,11 @@
 			<!-- Images -->
 			<section class="sm:px-8">
 				<!-- Image group -->
-				<div v-for="imageGroup in workItem.images" :key="imageGroup.key" class="flex flex-col sm:flex-row">
+				<div v-for="imageGroup in workItem.images" :key="imageGroup.key" class="flex flex-col xl:flex-row" :class="imageGroup.multiple ? imageGroup.position : null">
 					<!-- Image -->
 					<template v-for="(img, index) in imageGroup.images">
 						<div  v-if="img.url" :key="img.url" class="imageContainer mb-20 sm:mb-24 lg:mb-40 xl:mb-64 mx-auto">
-							<img v-scroll :src="img.url" :alt="imageGroup.key"  :class="['fade-up shadow-xxl', Object.keys(imageGroup.images[1]).length > 0 ? index === 0 ? 'left-image' : 'right-image' : null, imageGroup.decorative ? null : 'relative']"/>
+							<img v-scroll :src="img.url" :alt="imageGroup.key"  :class="['shadow-xxl', Object.keys(imageGroup.images[1]).length > 1 ? index === 0 ? 'left-image' : 'right-image' : null ,imageGroup.decorative ? null : 'relative']"/>
 						</div>
 					</template>
 
@@ -75,9 +77,8 @@ export default {
 		})
 
 		for (const group of workItem.images) {
-			let images = [group.image, group.image2]
-			console.log(images);
-			group.images = images
+			group.multiple = group.image2.url ? true : false
+			group.images = [group.image, group.image2]
 		}
 
 		const nextIndex = workItems.findIndex(item => {
@@ -89,6 +90,6 @@ export default {
 		return {  workItem: workItem, workItems: workItems, nextItem: nextItem }
 	},
 
-  layout: "work",
+  layout: "workLayout",
 }
 </script>

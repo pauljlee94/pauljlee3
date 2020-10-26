@@ -38,7 +38,7 @@ html {
 
 /* Index */
 .intro-title {
-	@apply text-6xl font-bold flex flex-col leading-tight blend;
+	@apply text-6xl font-medium flex flex-col leading-tight blend;
 	@screen sm {
 		font-size: 8vw;
 	}
@@ -51,9 +51,9 @@ html {
 	}
 }
 .main-nav-item {
-	@apply text-3xl font-semibold blend;
+	@apply text-3xl font-medium blend;
 	@screen lg {
-		font-size: 3.5vw;
+		font-size: 3vw;
 	}
 }
 .portfolio-item {
@@ -98,21 +98,57 @@ html {
 	@apply object-cover w-full;
 	height: 100vh;
 }
-.left-image {
-	@screen sm {
-		transform: translateX(2vw);
+
+.right, .left {
+	@screen xl {
+		padding: 5vw 0 9vw 0
 	}
 }
-.right-image {
-	@screen sm {
-		transform: translate(-4vw, 6vw);
+/* Portfolio */
+.right .left-image {
+	@screen xl {
+		transform: translateX(4vw);
 	}
 }
+.right .right-image {
+	@screen xl {
+		transform: translate(-4vw, 9vw);
+	}
+}
+
+.left .left-image {
+	@screen xl {
+		transform: translate(4vw, 9vw);
+	}
+}
+.left .right-image {
+	@screen xl {
+		transform: translate(-4vw);
+	}
+}
+
+.center {
+	@screen xl {
+		@apply grid grid-cols-2 gap-10;
+		padding: 0 5vw 0 5vw;
+	}
+}
+
+.center div {
+	@screen xl {
+		@apply flex items-center;
+	}
+}
+
 .portfolio-home {
-	@apply blend font-mont font-black flex flex-col items-center pb-6;
-	text-transform: uppercase;
+	@apply blend font-mont font-black flex flex-col items-center pb-6 uppercase;
 	font-size: 34vw;
-	line-height: 0.65;
+	line-height: 0.7;
+	@screen sm {
+		@apply flex-row items-start justify-start;
+		font-size: 16.5vw !important;
+		margin-left:-1vw;
+	}
 }
 .portfolio-next {
 	@apply blend font-mont font-black flex flex-col items-center;
@@ -125,12 +161,19 @@ html {
 	line-height: 0.65;
 }
 
-/* .font-work {
-font-family: "Work Sans", sans-serif;
-}
-.font-mont {
-	font-family: 'Montserrat', sans-serif;
+.work-about {
+	@screen lg {
+		@apply grid grid-cols-2;
+		padding-top:20vw;
 	}
-	.font-merr {
-		font-family: 'Merriweather', serif;;
-		} */
+}
+.work-about h2 {
+	@screen xxl {
+		font-size: 2.25vw;
+	}	
+}
+.work-about p,.work-about a, .work-about h3  {
+	@screen xxl {
+		font-size: 1.4vw;
+	}	
+}
