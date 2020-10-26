@@ -4,7 +4,7 @@
       <!-- Header -->
       <section>
         <h1 v-if="workItem.title[0]" 
-          class="portfolio-title"
+          :class="['portfolio-title', $route.params.workId]"
           v-html="workItem.title[0].text"
         ></h1>
       </section>
@@ -57,7 +57,7 @@
 					>Home</nuxt-link>
 					<nuxt-link
 						:to="'/work/' + nextItem.uid"
-						class="portfolio-next"
+						:class="['portfolio-next', nextItem.uid]"
 						v-html="nextItem.data.title[0].text"
 					></nuxt-link>
 				</nav>
@@ -74,11 +74,11 @@ export default {
      return promise.results
 		})
 
-		workItem.images.forEach(group => {
-			group.images = [group.image, group.image2]
-			delete group.image
-			delete group.image2
-		})
+		for (const group of workItem.images) {
+			let images = [group.image, group.image2]
+			console.log(images);
+			group.images = images
+		}
 
 		const nextIndex = workItems.findIndex(item => {
 			return item.uid === params.workId

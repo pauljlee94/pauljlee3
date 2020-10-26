@@ -20,7 +20,7 @@ html {
 
 /* Animations */
 .fade-up {
-	@apply transition ease-in-out duration-1000;
+	@apply transition ease-out duration-700;
 	opacity: 0;
 	transform: translateY(10vh);
 }
@@ -57,7 +57,7 @@ html {
 	}
 }
 .portfolio-item {
-	@apply text-5xl font-semibold underline transition ease-in-out duration-1000 font-mont uppercase;
+	@apply text-5xl font-semibold underline font-mont uppercase;
 	@screen sm {
 		font-size: 10vw;
 	}
@@ -74,6 +74,14 @@ html {
 	font-size: 34vw;
 	line-height: 0.6;
 }
+
+#work-item .audioeye {
+	@screen sm {
+		@apply flex-row items-start justify-center;
+		font-size: 18.5vw !important;
+	}
+}
+
 .metrics a {
 	@apply underline;
 }
