@@ -9,6 +9,7 @@
       </p>
     </section>
 
+<p>test</p>
     <pre v-if="contributions">{{contributions.contributionsCollection.contributionCalendar.totalContributions}}</pre>
 
     <!-- About -->
