@@ -17,6 +17,12 @@ html {
 .shadow-xxl {
 	box-shadow: 0px 0px 65px -8px rgba(0, 0, 0, 0.75);
 }
+.self-end {
+	align-self: flex-end;
+}
+.self-start {
+	align-self: flex-start;
+}
 
 /* Animations */
 .fade-up {
