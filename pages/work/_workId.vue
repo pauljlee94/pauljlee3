@@ -59,7 +59,7 @@
 					>Home</nuxt-link>
 					<nuxt-link
 						:to="'/work/' + nextItem.uid"
-						:class="['portfolio-next', nextItem.uid]"
+						:class="['portfolio-next', nextItem.uid, checkNameLength(nextItem.data.title[0].text) <= 6 ? 'sm:float-right' : null]"
 						v-html="nextItem.data.title[0].text"
 					></nuxt-link>
 				</nav>
@@ -88,6 +88,14 @@ export default {
 		const nextItem = workItems[nextIndex] ? workItems[nextIndex] : workItems[0]
 
 		return {  workItem: workItem, workItems: workItems, nextItem: nextItem }
+	},
+
+	methods: {
+		checkNameLength(text) {
+			let length = 0
+			length = text.split('</span>')[0].split('>')[1].length + text.split('</span>')[1].split('>')[1].length
+			return length
+		}
 	},
 
   layout: "workLayout",
