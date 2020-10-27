@@ -49,8 +49,7 @@ export default {
           headers: {
              "Authorization": 'Bearer ' + process.env.GITHUB_TOKEN
           }
-      },
-        // getAuth: () => 'Bearer 60278b746304b37f11b1b24a83bb84a8ac33f056'
+        },
       }
     },
   },
