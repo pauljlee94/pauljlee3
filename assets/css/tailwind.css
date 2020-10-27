@@ -23,6 +23,11 @@ html {
 .self-start {
 	align-self: flex-start;
 }
+.sm-self-auto {
+	@screen sm {
+		align-self: auto;
+	}
+}
 
 /* Animations */
 .fade-up {

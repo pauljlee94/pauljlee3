@@ -9,7 +9,7 @@
       </p>
     </section>
 
-<p>test</p>
+    <!-- TODO: Commits in last year -->
     <pre v-if="contributions">{{contributions.contributionsCollection.contributionCalendar.totalContributions}}</pre>
 
     <!-- About -->
