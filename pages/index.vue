@@ -12,19 +12,16 @@
     <!-- About -->
     <section id="about" class="max-w-2xl mx-auto px-6 py-20">
       <div  v-scroll class="box p-6 blend fade-up" v-html="home.about[0].text"></div>
-      <div class="py-12 text-2xl flex flex-col space-y-10">
-        <div v-scroll class="fade-up flex justify-between type">
-          <h3>Contributions in the last year</h3>
+      <div class="mt-12 text-2xl flex flex-col space-y-10">
+        <div v-scroll class="fade-up flex justify-between items-center space-x-4 type">
+          <h3>GitHub contributions in the last year</h3>
           <p v-if="contributions">{{contributions.contributionsCollection.contributionCalendar.totalContributions}}</p>
         </div>
-        <div v-scroll class="fade-up flex justify-between type">
-          <h3>Favorite Tech</h3>
-          <p>Nuxt.js</p>
+        <div v-for="metric in home.metrics" :key="metric.title[0].text" v-scroll class="fade-up flex justify-between type">
+          <h3>{{metric.title[0].text}}</h3>
+          <p>{{metric.metric[0].text}}</p>
         </div>
-        <div v-scroll class="fade-up flex justify-between type">
-          <h3>Favorite Artist</h3>
-          <p>Bon Iver</p>
-        </div>
+
       </div>
     </section>
 

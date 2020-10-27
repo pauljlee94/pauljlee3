@@ -53,7 +53,6 @@ html {
 	@screen sm {
 		font-size: 8vw;
 	}
-	text-shadow: 0px 0px 7px white;
 }
 .branding {
 	@apply flex flex-col text-lg;
@@ -74,9 +73,15 @@ html {
 	}
 }
 
+#about .box h2 {
+	@apply text-xl font-bold;
+}
+#about .box p {
+	@apply mt-4;
+}
 /* Portfolio */
 .portfolio-title {
-	@apply fixed blend font-mont font-black flex flex-col items-center inset-0;
+	@apply fixed blend font-mont font-black flex flex-col items-center inset-0 h-0;
 	@screen sm {
 		@apply flex-row items-start justify-center;
 		font-size: 18.5vw !important;
@@ -153,9 +158,10 @@ html {
 }
 
 .portfolio-home {
-	@apply blend font-mont font-black flex flex-col items-center pb-6 uppercase;
+	@apply font-mont font-black flex flex-col items-center uppercase;
 	font-size: 38vw;
-	line-height: 0.55;
+	line-height: 0.8;
+	overflow: hidden;
 	@screen sm {
 		@apply flex-row items-start justify-start;
 		font-size: 16.5vw !important;
@@ -163,14 +169,15 @@ html {
 	}
 }
 .portfolio-next {
-	@apply blend font-mont font-black flex flex-col items-center;
+	@apply font-mont font-black flex flex-col items-center;
+	text-transform: uppercase;
+	font-size: 38vw;
+	line-height: 0.75;
+	overflow: hidden;
 	@screen sm {
 		@apply flex-row items-start justify-center;
 		font-size: 18.5vw !important;
 	}
-	text-transform: uppercase;
-	font-size: 38vw;
-	line-height: 0.8;
 }
 
 .work-about {

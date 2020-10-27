@@ -11,7 +11,7 @@ Vue.directive('scroll', {
         } else {
           el.classList.add('in-view')
         }
-        window.removeEventListener('scroll', f);
+        window.removeEventListener('scroll', checkScrollPosition);
       }
     };
 
