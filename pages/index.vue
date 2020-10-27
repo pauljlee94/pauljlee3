@@ -9,6 +9,8 @@
       </p>
     </section>
 
+    <pre v-if="contributions">{{contributions.contributionsCollection.contributionCalendar.totalContributions}}</pre>
+
     <!-- About -->
     <section id="about" class="h-screen max-w-2xl mx-auto px-6 pt-48">
       <div  v-scroll class="box p-6 blend fade-up" v-html="home.about[0].text"></div>
@@ -76,7 +78,22 @@
 </template>
 
 <script>
+import gql from 'graphql-tag'
+
 export default {
+  head() {
+		return {
+			title: 'PAUL J. LEE',
+			// meta: [
+			// 	// hid is used as unique identifier. Do not use `vmid` for it as it will not work
+			// 	{
+			// 		hid: 'description',
+			// 		name: 'description',
+			// 		content: 'My custom description'
+			// 	}
+			// ]
+		}
+	},
   async asyncData({ $prismic, error }) {
     const home = (await $prismic.api.getSingle('home')).data
     const workItems = await $prismic.api
@@ -85,6 +102,20 @@ export default {
         return promise.results
       })
     return { home: home, workItems: workItems }
+  },
+  
+  apollo: {
+    contributions: gql `
+      query {
+        contributions: user(login: "pauljlee94") {
+          contributionsCollection {
+            contributionCalendar  {
+             totalContributions
+            }
+          }
+        }
+      }
+    `
   },
   layout: "defaultLayout"
 }

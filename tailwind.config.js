@@ -14,7 +14,7 @@ module.exports = {
     },
     fontFamily: {
       'work': ['Work Sans'],
-      'mont': ['Montserrat'],
+      'mont': ['Raleway'],
       'merr': ['Merriweather'],
     },
   },

@@ -70,6 +70,19 @@
 
 <script>
 export default {
+	head() {
+		return {
+			title: this.$route.params.workId.toUpperCase() + ' - PAUL J. LEE',
+			// meta: [
+			// 	// hid is used as unique identifier. Do not use `vmid` for it as it will not work
+			// 	{
+			// 		hid: 'description',
+			// 		name: 'description',
+			// 		content: 'My custom description'
+			// 	}
+			// ]
+		}
+	},
   async asyncData({ $prismic, error, params }) {
 		const workItem = (await $prismic.api.getByUID("portfolio", params.workId)).data
     const workItems = await $prismic.api.query($prismic.predicates.at("document.type", "portfolio"),{ orderings : '[my.portfolio.order]' }).then(promise =>{

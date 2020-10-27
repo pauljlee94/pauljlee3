@@ -57,7 +57,7 @@ html {
 	}
 }
 .main-nav-item {
-	@apply text-3xl font-medium blend;
+	@apply text-3xl font-medium blend cursor-pointer;
 	@screen lg {
 		font-size: 3vw;
 	}
@@ -74,10 +74,10 @@ html {
 	@apply fixed blend font-mont font-black flex flex-col items-center inset-0;
 	@screen sm {
 		@apply flex-row items-start justify-center;
-		font-size: 16.5vw !important;
+		font-size: 18.5vw !important;
 	}
 	text-transform: uppercase;
-	font-size: 34vw;
+	font-size: 38vw;
 	line-height: 0.6;
 }
 
@@ -85,7 +85,7 @@ html {
 #work-item .audioeye {
 	@screen sm {
 		@apply flex-row items-start justify-center;
-		font-size: 18.5vw !important;
+		font-size: 20.5vw !important;
 	}
 }
 
@@ -149,8 +149,8 @@ html {
 
 .portfolio-home {
 	@apply blend font-mont font-black flex flex-col items-center pb-6 uppercase;
-	font-size: 34vw;
-	line-height: 0.7;
+	font-size: 38vw;
+	line-height: 0.55;
 	@screen sm {
 		@apply flex-row items-start justify-start;
 		font-size: 16.5vw !important;
@@ -161,10 +161,10 @@ html {
 	@apply blend font-mont font-black flex flex-col items-center;
 	@screen sm {
 		@apply flex-row items-start justify-center;
-		font-size: 16.5vw !important;
+		font-size: 18.5vw !important;
 	}
 	text-transform: uppercase;
-	font-size: 34vw;
+	font-size: 38vw;
 	line-height: 0.8;
 }
 

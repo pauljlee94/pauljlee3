@@ -4,7 +4,7 @@ export default {
 
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
-    title: 'pauljlee3',
+    title: 'PAUL J. LEE',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -29,7 +29,8 @@ export default {
   ],
 
   modules: [
-    "@nuxtjs/prismic",
+    '@nuxtjs/apollo',
+    '@nuxtjs/prismic',
     ['vue-scrollto/nuxt', {duration: 1000}],
     'nuxt-webfontloader',
   ],
@@ -40,11 +41,25 @@ export default {
     htmlSerializer: '@/plugins/html-serializer',
   },
 
+  apollo: {
+    clientConfigs: {
+      default: {
+        httpEndpoint: 'https://api.github.com/graphql',
+        httpLinkOptions: {
+          headers: {
+             "Authorization": 'Bearer ' + process.env.GITHUB_TOKEN
+          }
+      },
+        // getAuth: () => 'Bearer 60278b746304b37f11b1b24a83bb84a8ac33f056'
+      }
+    },
+  },
+
   build: {
   },
   webfontloader: {
     google: {
-      families: ['Montserrat:900', 'Work Sans:400,500,700', 'Merriweather:400']
+      families: ['Raleway:900', 'Work Sans:400,500,700', 'Merriweather:400']
     }
   },
 }
