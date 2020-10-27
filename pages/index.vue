@@ -2,19 +2,30 @@
   <div>
     <!-- Intro -->
     <section class="h-screen flex flex-col justify-between pt-40 pb-6 px-6 text-right md:px-32">
-      <h1 class="intro-title" v-html="home.tagline[0].text"></h1>
+      <h1 v-scroll class="intro-title"></h1>
       <p class="branding">
         <span> PAUL J. LEE</span>
         <span>{{ new Date().getFullYear() }} PORTFOLIO</span>
       </p>
     </section>
 
-    <!-- TODO: Commits in last year -->
-    <pre v-if="contributions">{{contributions.contributionsCollection.contributionCalendar.totalContributions}}</pre>
-
     <!-- About -->
-    <section id="about" class="h-screen max-w-2xl mx-auto px-6 pt-48">
+    <section id="about" class="max-w-2xl mx-auto px-6 py-20">
       <div  v-scroll class="box p-6 blend fade-up" v-html="home.about[0].text"></div>
+      <div class="py-12 text-2xl flex flex-col space-y-10">
+        <div v-scroll class="fade-up flex justify-between type">
+          <h3>Contributions in the last year</h3>
+          <p v-if="contributions">{{contributions.contributionsCollection.contributionCalendar.totalContributions}}</p>
+        </div>
+        <div v-scroll class="fade-up flex justify-between type">
+          <h3>Favorite Tech</h3>
+          <p>Nuxt.js</p>
+        </div>
+        <div v-scroll class="fade-up flex justify-between type">
+          <h3>Favorite Artist</h3>
+          <p>Bon Iver</p>
+        </div>
+      </div>
     </section>
 
     <!-- Work -->
@@ -80,6 +91,7 @@
 
 <script>
 import gql from 'graphql-tag'
+import Typed from 'typed.js';
 
 export default {
   head() {
@@ -94,7 +106,7 @@ export default {
 			// 	}
 			// ]
 		}
-	},
+  },
   async asyncData({ $prismic, error }) {
     const home = (await $prismic.api.getSingle('home')).data
     const workItems = await $prismic.api
@@ -118,6 +130,16 @@ export default {
       }
     `
   },
+
+  mounted () {
+    new Typed('.intro-title', {
+      strings: [this.home.tagline[0].text],
+      typeSpeed: 60,
+      loop: false,
+      showCursor: false
+    })
+  },
+
   layout: "defaultLayout"
 }
 </script>
