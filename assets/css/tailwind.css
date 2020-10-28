@@ -74,7 +74,7 @@ html {
 }
 
 #about .box h2 {
-	@apply text-2xl font-bold;
+	@apply text-3xl font-bold;
 }
 #about .box p {
 	@apply mt-4;
