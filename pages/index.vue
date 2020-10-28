@@ -16,17 +16,17 @@
       <section
         ref="about_section"
         id="about"
-        class="py-40 lg:py-64 max-w-5xl mx-auto px-6 lg:text-lg lg:flex lg:space-x-20 lg:items-center"
+        class="py-40 lg:py-64 max-w-6xl mx-auto px-6 lg:text-lg lg:flex lg:space-x-20 lg:items-center"
       >
         <div
           v-scroll
           class="box p-6 blend fade-up lg:w-2/3"
           v-html="home.about[0].text"
         ></div>
-        <div class="mt-12 text-2xl flex flex-col space-y-10 lg:mt-0">
+        <div class="mt-12 text-2xl lg:text-3xl flex flex-col space-y-10 lg:mt-0">
           <div
             v-scroll
-            class="fade-up flex justify-between items-center space-x-4 type"
+            class="fade-up flex justify-between items-center space-x-20 type"
           >
             <h3>GitHub contributions in the last year</h3>
             <p v-if="contributions">
@@ -225,8 +225,7 @@ export default {
   mounted() {
     new Typed(".intro-title", {
       strings: [this.home.tagline[0].text],
-      typeSpeed: 60,
-      loop: false,
+      typeSpeed: 50,
       showCursor: false,
     })
   },
