@@ -59,7 +59,7 @@
             </p>
           </div> -->
           <!-- TODO: RESUME HERE -->
-          <a href="/favicon.ico" v-scroll class="fade-up box text-center transition duration-200 hover:bg-white hover:text-black active:bg-white active:text-black" target="_blank">Resume</a>
+          <a :href="home.resume.url" v-scroll class="fade-up box text-center transition duration-200 hover:bg-white hover:text-black active:bg-white active:text-black" target="_blank">Resume</a>
         </div>
       </section>
 
