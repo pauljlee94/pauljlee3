@@ -20,7 +20,7 @@
 					<hr v-if="workItem.tagline[0]" class="my-4 blend" />
 
 					<p v-if="workItem.summary[0]" 
-						class="text-lg font-work font-light leading-snug blend"
+						class="text-lg font-work font-light leading-snug blend space-y-6"
 						v-html="workItem.summary[0].text"
 					></p>
 
@@ -36,10 +36,10 @@
 			<!-- Images -->
 			<section class="sm:px-8">
 				<!-- Image group -->
-				<div v-for="imageGroup in workItem.images" :key="imageGroup.key" class="flex flex-col xl:flex-row" :class="imageGroup.multiple ? imageGroup.position : null">
+				<div v-for="imageGroup in workItem.images" :key="imageGroup.key" class="flex flex-col xl:flex-row mx-auto" :class="imageGroup.multiple ? imageGroup.position : 'max-w-screen-xl'">
 					<!-- Image -->
 					<template v-for="(img, index) in imageGroup.images">
-						<div  v-if="img.url" :key="img.url" class="imageContainer mb-20 sm:mb-24 lg:mb-40 xl:mb-64 mx-auto">
+						<div  v-if="img.url" :key="img.url" class="imageContainer mb-20 sm:mb-24 lg:mb-40 xl:mb-64">
 							<img v-scroll :src="img.url" :alt="imageGroup.key"  :class="['shadow-xxl', Object.keys(imageGroup.images[1]).length > 1 ? index === 0 ? 'left-image' : 'right-image' : null ,imageGroup.decorative ? null : 'relative']"/>
 						</div>
 					</template>

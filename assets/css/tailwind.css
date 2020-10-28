@@ -28,6 +28,9 @@ html {
 		align-self: auto;
 	}
 }
+.text-shadow {
+	text-shadow: 5px 5px 0px rgba(255, 255, 255, 0.7);
+}
 
 /* Animations */
 .fade-up {
@@ -72,7 +75,9 @@ html {
 		font-size: 10vw;
 	}
 }
-
+.portfolio-item:hover {
+	@apply text-shadow;
+}
 #about .box h2 {
 	@apply text-3xl font-bold;
 	@screen lg {
@@ -172,6 +177,11 @@ html {
 		margin-left:-1vw;
 	}
 }
+
+.portfolio-home:hover {
+	@apply text-shadow
+}
+
 .portfolio-next {
 	@apply font-mont font-black flex flex-col items-center;
 	text-transform: uppercase;
@@ -182,6 +192,10 @@ html {
 		@apply flex-row items-start justify-center;
 		font-size: 18.5vw !important;
 	}
+}
+
+.portfolio-next:hover {
+	@apply text-shadow
 }
 
 .work-about {

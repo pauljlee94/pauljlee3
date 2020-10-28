@@ -3,7 +3,7 @@
     <main>
       <!-- Intro -->
       <section
-        class="h-screen flex flex-col justify-between pt-40 pb-6 px-6 text-right md:px-32"
+        class="h-screen flex flex-col justify-between pt-40 pb-6 px-6 text-right sm:px-16 lg:px-32"
       >
         <h1 v-scroll class="intro-title"></h1>
         <p class="branding">
@@ -58,7 +58,6 @@
               }}
             </p>
           </div> -->
-          <!-- TODO: RESUME HERE -->
           <a :href="home.resume.url" v-scroll class="fade-up box text-center transition duration-200 hover:bg-white hover:text-black active:bg-white active:text-black" target="_blank">Resume</a>
         </div>
       </section>
@@ -67,7 +66,7 @@
       <section
         ref="work_section"
         id="work"
-        class="h-screen flex flex-col justify-center items-center px-6"
+        class="h-screen flex flex-col justify-center items-center px-6 space-y-4"
       >
         <nuxt-link
           v-scroll
