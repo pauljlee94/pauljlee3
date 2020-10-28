@@ -58,6 +58,8 @@
               }}
             </p>
           </div> -->
+          <!-- TODO: RESUME HERE -->
+          <a href="/favicon.ico" class="box text-center transition duration-200 hover:bg-white hover:text-black active:bg-white active:text-black" target="_blank">Resume</a>
         </div>
       </section>
 
@@ -91,47 +93,47 @@
         >
           <div>
             <label for="name" class="block text-lg"> Name </label>
-            <div class="mt-2 border-2 border-white p-2">
+            <div class="mt-2 p-3 box">
               <input
                 id="name"
                 name="name"
                 required
-                class="bg-black block w-full transition duration-150 ease-in-out sm:text-sm sm:leading-5"
+                class="bg-black block w-full transition duration-150 ease-in-out text-lg sm:leading-5"
               />
             </div>
           </div>
           <div class="mt-3">
             <label for="email" class="block text-lg"> Email </label>
-            <div class="mt-2 border-2 border-white p-2">
+            <div class="mt-2 p-3 box">
               <input
                 id="email"
                 name="email"
                 required
-                class="bg-black block w-full transition duration-150 ease-in-out sm:text-sm sm:leading-5"
+                class="bg-black block w-full transition duration-150 ease-in-out text-lg sm:leading-5"
               />
             </div>
           </div>
           <div class="mt-3">
             <label for="message" class="block text-lg"> Message </label>
-            <div class="mt-2 border-2 border-white p-2">
+            <div class="mmt-2 p-3 box">
               <textarea
                 id="message"
                 name="message"
                 required
-                class="h-64 bg-black resize-none block w-full transition duration-150 ease-in-out sm:text-sm sm:leading-5"
+                class="h-64 bg-black resize-none block w-full transition duration-150 ease-in-out text-lg sm:leading-5"
               />
             </div>
           </div>
           <div class="mt-6">
             <button
-              class="border-2 p-4 w-full text-lg transition duration-00 hover:bg-white hover:text-black active:bg-white active:text-black"
+              class="mt-2 box p-3 w-full text-lg transition duration-200 hover:bg-white hover:text-black active:bg-white active:text-black"
             >
               Send
             </button>
           </div>
         </form>
         <div class="mt-16">
-          <div class="border-2 p-4 w-full text-lg grid grid-cols-2 gap-y-3">
+          <div class="box mt-2 p-4 w-full text-lg grid grid-cols-2 gap-y-3">
             <a class="underline" href="">GitHub</a>
             <a class="underline" href="">LinkedIn</a>
             <a class="underline" href="">Email</a>
